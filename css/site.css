@@ -1,0 +1,53 @@
+body{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main{
+  flex: 1 0 auto;
+}
+
+.div-contenedor-login{
+  display: flex;
+  margin: 10px;
+}
+
+.div-registro-pass{
+  margin-top: 25px;
+}
+
+.div-menu-principal{
+  /*display: flex;*/
+}
+
+.menu-principal{
+  display: inline-flex;
+}
+
+.menu-pricipal-li
+{
+  margin-right: 10px;
+  width: 165px;
+  height: 130px;
+}
+
+.menu-pricipal-li:hover{
+  background-color: rgba(#fa5200, 0.56)
+}
+
+@media (max-width: 800px) {
+  #login-page{
+    height: 500px;
+    margin: 10% auto;
+  }
+}
+
+@media (min-width: 750px) {
+
+  #login-page{
+    height: 500px;
+    width: 20%;
+    margin: 10% auto;
+  }
+}
