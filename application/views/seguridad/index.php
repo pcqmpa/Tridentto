@@ -1,3 +1,13 @@
+<?php
+    defined('BASEPATH') OR exit('No direct script access allowed');
+    $mensa ='';
+
+    if($mensaje != '')
+    {
+      $mensa = $mensaje;
+    }
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,12 +21,15 @@
   </head>
   <body class="deep-orange darken-2">
 
+
+  <input type="hidden" id="mensaje" value="<?= $mensa; ?>" />
+
     <div class="div-contenedor-login row">
       <div id="login-page" class="col s12 card-panel z-depth-4">
-        <form class="col s12" action="index.html" method="post">
+        <?= form_open('/seguridad/login'); ?>
             <div class="row">
               <div class="input-field col s12 center-align">
-                <img src="images/avatar.png" alt="logo" class="circle" width="80" height="80" />
+                <img src="<?= base_url(); ?>images/avatar.png" alt="logo" class="circle" width="80" height="80" />
                 <h5 class="center" >Login</h5>
               </div>
               <div class="input-field col s12">
@@ -35,9 +48,9 @@
               </div>
             </div>
             <div class="input-field col s12">
-              <button type="button" name="action" class="btn waves-effect waves-light deep-orange accent-3 col s12">Login</button>
+              <input type="submit" name="submit_val" id="btn-login" value="Login" class="btn waves-effect waves-light deep-orange accent-3 col s12">
             </div>
-        </form>
+        <?= form_close(); ?>
         <br/>
         <div class="div-registro-pass col s12">
           <div class="row">
@@ -47,8 +60,20 @@
         </div>
       </div>
 
+
+
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>js/materialize.js"></script>
+    <script type="text/javascript">
+      
+      $(function(){
+
+        var mensaje = $("#mensaje").val();
+        alert(mensaje);
+
+      });
+
+    </script>
   </body>
 </html>
